@@ -2,7 +2,7 @@ import pegaArquivo from "./index.js";
 import chalk from 'chalk';
 import fs from 'fs';
 
-const caminho = process.argv;
+const caminho = 'arquivos/'+ process.argv[2];
 
 function imprimeLista(resultado, indentificador){
     console.log(
@@ -11,10 +11,9 @@ function imprimeLista(resultado, indentificador){
         resultado);
 }
 
-async function processaTexto(argumento) {
-    const caminho = argumento[2];
-    
+async function processaTexto() {
     try{
+        console.log(caminho);
         fs.lstatSync(caminho);
     }catch(erro){
         if(erro.code === 'ENOENT'){
@@ -36,4 +35,4 @@ async function processaTexto(argumento) {
     
 }
 
-processaTexto(caminho);
+processaTexto();
