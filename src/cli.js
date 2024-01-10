@@ -13,7 +13,6 @@ function imprimeLista(resultado, indentificador){
 
 async function processaTexto() {
     try{
-        console.log(caminho);
         fs.lstatSync(caminho);
     }catch(erro){
         if(erro.code === 'ENOENT'){
